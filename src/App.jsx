@@ -1,9 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Users from "./pages/Users";
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import AuthRoute from './pages/auth/AuthRoute'
+import About from './pages/About'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Users from './pages/Users'
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
         </Routes>
       </div>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
