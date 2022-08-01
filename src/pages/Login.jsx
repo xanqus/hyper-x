@@ -1,37 +1,41 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useSetRecoilState } from "recoil";
+import { authenticatedState } from "./recoil/store";
 
 const Login = () => {
-  const [userId, setUserId] = useState('')
-  const [userPassword, setUserPassword] = useState('')
-  const onChangeIdInput = e => {
-    setUserId(e.target.value)
-  }
-  const onChnagePasswordInput = e => {
-    setUserPassword(e.target.value)
-  }
+  const [userId, setUserId] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const setAuthenticated = useSetRecoilState(authenticatedState);
+  const onChangeIdInput = (e) => {
+    setUserId(e.target.value);
+  };
+  const onChnagePasswordInput = (e) => {
+    setUserPassword(e.target.value);
+  };
 
-  const doLogin = async e => {
-    e.preventDefault()
+  const doLogin = async (e) => {
+    e.preventDefault();
     try {
       const data = await axios({
-        method: 'post',
-        url: 'http://localhost:8287/login',
+        method: "post",
+        url: "http://localhost:8287/login",
         data: {
           username: userId,
           password: userPassword,
         },
-      })
+      });
 
       if (data.headers.authorization) {
-        localStorage.setItem('login-token', data.headers.authorization)
-        alert('로그인 성공')
+        setAuthenticated(true);
+        localStorage.setItem("login-token", data.headers.authorization);
+        alert("로그인 성공");
       }
     } catch (e) {
-      console.log(e)
-      alert('로그인 실패')
+      console.log(e);
+      alert("로그인 실패");
     }
-  }
+  };
   // useEffect(() => {
   //   doLogin()
   // }, [])
@@ -54,7 +58,7 @@ const Login = () => {
         <button type="submit">로그인</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
