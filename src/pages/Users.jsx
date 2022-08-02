@@ -6,7 +6,7 @@ const Users = () => {
     const getUsers = async () => {
       const data = await ApiInterceptor({ url: '/api/v1/user', method: 'GET' })
 
-      console.log('data', data)
+      console.log('userdata', data)
     }
     getUsers()
   }, [])

@@ -1,33 +1,17 @@
-import React, { Suspense, lazy, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Navigate,
-} from "react-router-dom";
-import { useRecoilState } from "recoil";
-import AuthRoutes from "./pages/auth/AuthRoutes";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import { authenticatedState } from "./pages/recoil/store";
-import WorkSpace from "./pages/WorkSpace";
-import { validCheck } from "./utils/JwtUtil";
-const About = lazy(() => import("./pages/About"));
-const Users = lazy(() => import("./pages/Users"));
+import React, { Suspense, lazy } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { useRecoilState } from 'recoil'
+import AuthRoutes from './pages/auth/AuthRoutes'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import { authenticatedState } from './pages/recoil/store'
+import WorkSpace from './pages/WorkSpace'
+const About = lazy(() => import('./pages/About'))
+const Users = lazy(() => import('./pages/Users'))
 
 const App = () => {
-  console.log("전역 라우터");
-  const [authenticated, setAuthenticated] = useRecoilState(authenticatedState);
-  useEffect(() => {
-    const jwt = localStorage.getItem("login-token");
-    if (!validCheck(jwt)) {
-      setAuthenticated(false);
-      localStorage.removeItem("login-token");
-    } else {
-      setAuthenticated(true);
-    }
-  }, [setAuthenticated]);
+  const [authenticated, setAuthenticated] = useRecoilState(authenticatedState)
+
   return (
     <Router>
       <Suspense fallback={<p>loading...</p>}>
@@ -38,7 +22,7 @@ const App = () => {
           <Link
             to="/"
             onClick={() => {
-              setAuthenticated(false);
+              setAuthenticated(false)
             }}
           >
             로그아웃
@@ -57,7 +41,7 @@ const App = () => {
         </Routes>
       </Suspense>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
