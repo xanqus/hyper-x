@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useSetRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { authenticatedState } from "./recoil/store";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [userId, setUserId] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const setAuthenticated = useSetRecoilState(authenticatedState);
+  const [authenticated, setAuthenticated] = useRecoilState(authenticatedState);
   const onChangeIdInput = (e) => {
     setUserId(e.target.value);
   };
@@ -29,16 +31,15 @@ const Login = () => {
       if (data.headers.authorization) {
         setAuthenticated(true);
         localStorage.setItem("login-token", data.headers.authorization);
-        alert("로그인 성공");
       }
     } catch (e) {
       console.log(e);
       alert("로그인 실패");
     }
   };
-  // useEffect(() => {
-  //   doLogin()
-  // }, [])
+  if (localStorage.getItem("login-token")) {
+    navigate("/");
+  }
   return (
     <div>
       <h2>Login</h2>
