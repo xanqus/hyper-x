@@ -6,7 +6,6 @@ const About = () => {
   useEffect(() => {
     const getData = async () => {
       const data = await axios.get("https://api.coinpaprika.com/v1/tickers");
-      console.log(data);
       setCoins(data.data);
     };
     getData();
