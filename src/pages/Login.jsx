@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { authenticatedState } from "./recoil/store";
+import { authenticatedState } from "../recoil/store";
 
 const Login = ({ to }) => {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Layout from "../layouts/Layout";
 
 const About = () => {
-  const [coins, setCoins] = useState([]);
   useEffect(() => {
     const getData = async () => {
       const data = await axios.get("https://api.coinpaprika.com/v1/tickers");
@@ -10,15 +10,18 @@ const About = () => {
     };
     getData();
   }, []);
+  const [coins, setCoins] = useState([]);
   return (
-    <div>
-      <h2>About</h2>
-      <ul>
-        {coins.map((coin, index) => {
-          return <li key={index}>{coin.id}</li>;
-        })}
-      </ul>
-    </div>
+    <Layout>
+      <div>
+        <h2>About</h2>
+        <ul>
+          {coins.map((coin, index) => {
+            return <li key={index}>{coin.id}</li>;
+          })}
+        </ul>
+      </div>
+    </Layout>
   );
 };
 
