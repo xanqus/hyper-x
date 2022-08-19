@@ -7,85 +7,135 @@ const Header = () => {
   const [authenticated, setAuthenticated] = useRecoilState(authenticatedState);
   return (
     <header className="flex justify-center shadow">
-      <div class="navbar bg-base-100 flex justify-center">
-        <div className="max-w-6xl w-full border-red-500 border-2">
-          <div class="navbar-start flex w-1/3 border-yellow-500 border-2 bg-red-500 lg:w-full">
-            <div class="dropdown lg:hidden h-12">
-              <label tabindex="0" class="btn btn-ghost btn-circle">
+      <div className="navbar p-0 bg-base-100 flex justify-center">
+        <div className="max-w-6xl w-full">
+          <div className="navbar-start flex w-1/3 lg:w-full">
+            <div className="hidden lg:flex">
+              <div className="py-3 w-16 mx-2">
+                <div className="flex justify-center text-gray-400 hover:text-green-300">
+                  <Link className="" to="/">
+                    강의
+                  </Link>
+                </div>
+              </div>
+              <div className="py-3 w-16 mx-2">
+                <div className="flex justify-center text-gray-400 hover:text-green-300">
+                  <Link className="" to="/">
+                    로드맵
+                  </Link>
+                </div>
+              </div>
+              <div className="py-3 w-16 mx-2">
+                <div className="flex justify-center text-gray-400 hover:text-green-300">
+                  <Link className="" to="/">
+                    멘토링
+                  </Link>
+                </div>
+              </div>
+              <div className="py-3 w-16 mx-2">
+                <div className="flex justify-center text-gray-400 hover:text-green-300">
+                  <Link className="" to="/">
+                    커뮤니티
+                  </Link>
+                </div>
+              </div>
+              <div className="py-3 w-16 mx-2">
+                <div className="flex justify-center text-gray-400 hover:text-green-300">
+                  <Link className="" to="/">
+                    HYPER-X
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="flex lg:hidden">
+              <button className="btn btn-ghost btn-circle hover:bg-transparent">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg>
-              </label>
-              <ul
-                tabindex="0"
-                class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <a href="#!">Homepage</a>
-                </li>
-                <li>
-                  <a href="#!">Portfolio</a>
-                </li>
-                <li>
-                  <a href="#!">About</a>
-                </li>
-              </ul>
+              </button>
             </div>
-            <div className="h-12 hidden lg:flex">hi</div>
           </div>
 
-          <div class="navbar-center flex flex-1 justify-center w-32 lg:order-first border-yellow-500 border-2">
-            <a href="#!" class="btn btn-ghost normal-case text-xl">
-              daisyUI
+          <div className="navbar-center flex flex-1 justify-center w-32 lg:order-first">
+            <a
+              href="#!"
+              className="btn btn-ghost normal-case text-xl hover:bg-transparent"
+            >
+              HYPER-X
             </a>
           </div>
-          <div class="navbar-end flex grow-0 justify-end w-1/3 border-yellow-500 border-2">
-            <button class="btn btn-ghost btn-circle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
-            <button class="btn btn-ghost btn-circle z">
-              <div class="indicator">
+          <div className="navbar-end flex grow-0 justify-end w-1/3">
+            <div className="w-2/5 hidden lg:flex">
+              <button v="btn btn-ghost btn-circle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg>
-                <span class="badge badge-xs badge-primary indicator-item"></span>
+              </button>
+              <button className="btn btn-ghost btn-circle z">
+                <div className="indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                    />
+                  </svg>
+                  <span className="badge badge-xs badge-primary indicator-item"></span>
+                </div>
+              </button>
+            </div>
+            <div className="flex lg:w-3/5 w-full">
+              <div className="w-full">
+                {authenticated ? (
+                  <Link
+                    to="/"
+                    onClick={() => {
+                      setAuthenticated(false);
+                    }}
+                  >
+                    로그아웃
+                  </Link>
+                ) : (
+                  <div className="flex flex-row w-full h-full justify-end items-center">
+                    <div className="lg:w-12 lg:btn-sm lg:rounded-md w-10 btn-xs text-xs btn btn-ghost btn-outline rounded whitespace-nowrap mx-1 lg:m-auto border-none hover:bg-transparent hover:text-gray-500">
+                      <Link to="/login">로그인</Link>
+                    </div>
+                    <div className="lg:w-16 lg:btn-sm lg:rounded lg:px-10 btn btn-primary btn-xs text-xs rounded whitespace-nowrap mx-1 lg:m-auto bg-red-400 border-none hover:bg-red-500">
+                      <Link to="/join">회원가입</Link>
+                    </div>
+                  </div>
+                )}
               </div>
-            </button>
+            </div>
           </div>
         </div>
       </div>
