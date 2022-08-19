@@ -7,7 +7,7 @@ const Header = () => {
   const [authenticated, setAuthenticated] = useRecoilState(authenticatedState);
   return (
     <header className="flex justify-center items-start shadow">
-      <div className="navbar fixed h-20 bg-base-100 flex justify-center">
+      <div className="navbar fixed h-20 bg-base-100 flex justify-center z-10">
         <div className="max-w-6xl w-full">
           <div className="navbar-start flex w-1/3 lg:w-full">
             <div className="hidden lg:flex">
