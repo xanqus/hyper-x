@@ -6,55 +6,89 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [authenticated, setAuthenticated] = useRecoilState(authenticatedState);
   return (
-    <header className="w-full shadow">
-      <nav className="flex w-full fixed top-0 h-16 border-b-2 border-gray-300 justify-between md:">
-        <div className="flex flex-shrink justify-center w-24">
-          <Link to="/">
-            <div className="flex w-16 justify-center items-center h-full bg-red-500">
-              HYPER-X
-            </div>
-          </Link>
-        </div>
-
-        <div className="flex flex-row">
-          <div>
-            <Link to="/">Home</Link>
-          </div>
-          <div>
-            <Link to="/login">Login</Link>
-          </div>
-          <div>
-            <Link to="/about">About</Link>
-          </div>
-          <div>
-            <Link to="/users">Users</Link>
-          </div>
-        </div>
-
-        <div className="w-72 bg-red-500">
-          <div>
-            {authenticated ? (
-              <Link
-                to="/"
-                onClick={() => {
-                  setAuthenticated(false);
-                }}
+    <header className="flex justify-center shadow">
+      <div class="navbar bg-base-100 flex justify-center">
+        <div className="max-w-6xl w-full border-red-500 border-2">
+          <div class="navbar-start flex w-1/3 border-yellow-500 border-2 bg-red-500 lg:w-full">
+            <div class="dropdown lg:hidden h-12">
+              <label tabindex="0" class="btn btn-ghost btn-circle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h7"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
-                로그아웃
-              </Link>
-            ) : (
-              <div className="flex flex-row w-full">
-                <div className="w-1/2 bg-yellow-500">
-                  <Link to="/login">로그인</Link>
-                </div>
-                <div className="w-1/2">
-                  <Link to="/join">회원가입</Link>
-                </div>
+                <li>
+                  <a href="#!">Homepage</a>
+                </li>
+                <li>
+                  <a href="#!">Portfolio</a>
+                </li>
+                <li>
+                  <a href="#!">About</a>
+                </li>
+              </ul>
+            </div>
+            <div className="h-12 hidden lg:flex">hi</div>
+          </div>
+
+          <div class="navbar-center flex flex-1 justify-center w-32 lg:order-first border-yellow-500 border-2">
+            <a href="#!" class="btn btn-ghost normal-case text-xl">
+              daisyUI
+            </a>
+          </div>
+          <div class="navbar-end flex grow-0 justify-end w-1/3 border-yellow-500 border-2">
+            <button class="btn btn-ghost btn-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+            <button class="btn btn-ghost btn-circle z">
+              <div class="indicator">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
+                </svg>
+                <span class="badge badge-xs badge-primary indicator-item"></span>
               </div>
-            )}
+            </button>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };
