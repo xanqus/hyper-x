@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [authenticated, setAuthenticated] = useRecoilState(authenticatedState);
   return (
-    <header className="flex justify-center shadow">
-      <div className="navbar fixed p-0 bg-base-100 flex justify-center">
+    <header className="flex justify-center items-start shadow">
+      <div className="navbar fixed h-20 bg-base-100 flex justify-center">
         <div className="max-w-6xl w-full">
           <div className="navbar-start flex w-1/3 lg:w-full">
             <div className="hidden lg:flex">

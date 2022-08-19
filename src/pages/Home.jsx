@@ -1,6 +1,7 @@
 import { Carousel } from "flowbite-react";
 import React from "react";
-import CarouselItem from "../components/CarouselItem";
+import CarouselItem from "../components/home/CarouselItem";
+import MainInput from "../components/home/MainInput";
 import Layout from "../layouts/Layout";
 
 const Home = () => {
@@ -59,13 +60,14 @@ const Home = () => {
   ];
   return (
     <Layout>
-      <div className="gap-4 h-96">
+      <div className="gap-4 h-auto">
         <Carousel>
           {carouselDatas.map((carouselData, index) => (
             <CarouselItem carouselData={carouselData} />
           ))}
         </Carousel>
       </div>
+      <MainInput />
     </Layout>
   );
 };
