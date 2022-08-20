@@ -7,7 +7,12 @@ module.exports = {
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        112: "28rem",
+        128: "32rem",
+      },
+    },
   },
   plugins: [require("daisyui"), require("flowbite/plugin")],
 };

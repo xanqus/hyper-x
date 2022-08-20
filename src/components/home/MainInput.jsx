@@ -8,7 +8,7 @@ const MainInput = () => {
         <input
           type="text"
           placeholder="배우고 싶은 지식을 입력해보세요."
-          class="input input-bordered input-accent w-full max-w-xl input-lg w-full rounded-md mt-5"
+          className="input input-bordered input-accent w-full max-w-xl input-lg w-full rounded-md mt-5"
         />
       </div>
     </div>

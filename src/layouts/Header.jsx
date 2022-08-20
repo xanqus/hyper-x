@@ -42,7 +42,7 @@ const Header = () => {
               <div className="py-3 w-16 mx-2">
                 <div className="flex justify-center text-gray-400 hover:text-green-300">
                   <Link className="" to="/">
-                    HYPER-X
+                    HYPER
                   </Link>
                 </div>
               </div>
@@ -72,7 +72,7 @@ const Header = () => {
               href="#!"
               className="btn btn-ghost normal-case text-xl hover:bg-transparent"
             >
-              HYPER-X
+              HYPER
             </a>
           </div>
           <div className="navbar-end flex grow-0 justify-end w-1/3">
