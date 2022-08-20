@@ -16,8 +16,8 @@ const LectureList = ({ lectureDatas }) => {
         </div>
         <div className="w-full h-80 truncate">
           <div className="flex flex-wrap justify-start w-full h-full">
-            {lectureDatas.lectureDatas.map((letureData, index) => (
-              <LectureListItem letureData={letureData} />
+            {lectureDatas.lectureDatas.map((lectureData, index) => (
+              <LectureListItem lectureData={lectureData} />
             ))}
           </div>
         </div>

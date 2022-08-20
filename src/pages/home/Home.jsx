@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <Layout>
       <div className="gap-4 h-auto">
-        <Carousel>
+        <Carousel className="!rounded-none">
           {carouselDatas.map((carouselData, index) => (
             <CarouselItem carouselData={carouselData} />
           ))}
