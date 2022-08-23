@@ -2,11 +2,11 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import AuthRoutes from "./auth/AuthRoutes";
-import Home from "./pages/home/Home";
-import Login from "./pages/Login";
-import WorkSpace from "./pages/WorkSpace";
-const About = lazy(() => import("./pages/About"));
-const Users = lazy(() => import("./pages/Users"));
+import Home from "./routes/home/Home";
+import Login from "./routes/Login";
+import WorkSpace from "./routes/WorkSpace";
+const About = lazy(() => import("./routes/About"));
+const Users = lazy(() => import("./routes/Users"));
 
 const App = () => {
   return (

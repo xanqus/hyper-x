@@ -3,6 +3,15 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { authenticatedState } from "../recoil/store";
+import {
+  GoogleLogin,
+  googleLogout,
+  GoogleOAuthProvider,
+} from "@react-oauth/google";
+
+const responseGoogle = (response) => {
+  console.log("response", response);
+};
 
 const Login = ({ to }) => {
   const navigate = useNavigate();
@@ -42,22 +51,40 @@ const Login = ({ to }) => {
   };
   return (
     <div>
-      <h2>Login</h2>
-      <form onSubmit={doLogin}>
-        <input
-          type="text"
-          placeholder="ID"
-          value={userId}
-          onChange={onChangeIdInput}
-        />
-        <input
-          type="text"
-          placeholder="PASSWORD"
-          value={userPassword}
-          onChange={onChnagePasswordInput}
-        />
-        <button type="submit">로그인</button>
-      </form>
+      <div>
+        <h2>Login</h2>
+        <form onSubmit={doLogin}>
+          <input
+            type="text"
+            placeholder="ID"
+            value={userId}
+            onChange={onChangeIdInput}
+          />
+          <input
+            type="text"
+            placeholder="PASSWORD"
+            value={userPassword}
+            onChange={onChnagePasswordInput}
+          />
+          <button type="submit">로그인</button>
+        </form>
+      </div>
+      <div>
+        <GoogleOAuthProvider clientId="783164907876-44457lrh2o4ggner2rq66vffdechevng.apps.googleusercontent.com">
+          <GoogleLogin
+            onSuccess={responseGoogle}
+            onError={responseGoogle}
+            useOneTap
+          />
+        </GoogleOAuthProvider>
+        <button
+          onClick={() => {
+            googleLogout();
+          }}
+        >
+          logout
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import Login from "../pages/Login";
+import Login from "../routes/Login";
 import { authenticatedState } from "../recoil/store";
 
 const AuthRoutes = () => {
