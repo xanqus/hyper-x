@@ -69,9 +69,12 @@ const Login = ({ to }) => {
           <button type="submit">로그인</button>
         </form>
       </div>
-      <div>
+      <div className="">
         <GoogleOAuthProvider clientId="783164907876-44457lrh2o4ggner2rq66vffdechevng.apps.googleusercontent.com">
           <GoogleLogin
+            type="icon"
+            size="large"
+            shape="square"
             onSuccess={responseGoogle}
             onError={responseGoogle}
             useOneTap
