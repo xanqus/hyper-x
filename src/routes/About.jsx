@@ -3,10 +3,20 @@ import React, { useEffect, useState } from "react";
 import Layout from "../layouts/Layout";
 
 const About = () => {
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const data = await axios.get("https://api.coinpaprika.com/v1/tickers");
+  //     setCoins(data.data);
+  //   };
+  //   getData();
+  // }, []);
   useEffect(() => {
     const getData = async () => {
-      const data = await axios.get("https://api.coinpaprika.com/v1/tickers");
-      setCoins(data.data);
+      const data = await axios({
+        url: "http://localhost:8287/api/v1/user",
+        method: "GET",
+      });
+      console.log(data);
     };
     getData();
   }, []);
@@ -15,11 +25,11 @@ const About = () => {
     <Layout>
       <div>
         <h2>About</h2>
-        <ul>
+        {/* <ul>
           {coins.map((coin, index) => {
             return <li key={index}>{coin.id}</li>;
           })}
-        </ul>
+        </ul> */}
       </div>
     </Layout>
   );

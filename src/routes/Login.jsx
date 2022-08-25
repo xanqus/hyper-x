@@ -32,7 +32,7 @@ const Login = ({ to }) => {
     try {
       const data = await axios({
         method: "post",
-        url: "http://localhost:8287/login",
+        url: "http://localhost:8287/api/v1/login",
         data: {
           username: userId,
           password: userPassword,
