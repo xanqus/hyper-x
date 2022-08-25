@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import ApiInterceptor from "../utils/ApiInterceptor";
+import ApiController from "../utils/ApiController";
 
 const Users = () => {
   useEffect(() => {
     const getUsers = async () => {
-      const data = await ApiInterceptor({ url: "/api/v1/user", method: "GET" });
+      const data = await ApiController({ url: "/api/v1/user", method: "GET" });
     };
     getUsers();
   }, []);

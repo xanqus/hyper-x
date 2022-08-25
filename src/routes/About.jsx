@@ -11,13 +11,7 @@ const About = () => {
   //   getData();
   // }, []);
   useEffect(() => {
-    const getData = async () => {
-      const data = await axios({
-        url: "http://localhost:8287/api/v1/user",
-        method: "GET",
-      });
-      console.log(data);
-    };
+    const getData = async () => {};
     getData();
   }, []);
   const [coins, setCoins] = useState([]);
